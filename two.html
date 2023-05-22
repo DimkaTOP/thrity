@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Мой сайт</title>
+	<style>
+		body {
+			background-color: #ff4d4d;
+			font-family: Arial, sans-serif;
+			color: #fff;
+			text-align: center;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		.question-form {
+			background-color: #fff;
+			border-radius: 10px;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			margin-top: 30px;
+		}
+		.question-form label {
+			font-size: 24px;
+			margin-bottom: 10px;
+			display: block;
+			color: #333;
+		}
+		.question-form button[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			font-size: 18px;
+			cursor: pointer;
+			margin-top: 20px;
+			transition: background-color 0.3s ease-in-out;
+		}
+		.question-form button[type="submit"]:hover {
+			background-color: #4d4d4d;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Добро пожаловать на мой сайт!</h1>
+		<form class="question-form" onsubmit="return validateForm()">
+			<label>Хочешь видосик?</label>
+			<button type="submit">Да</button>
+		</form>
+	</div>
+
+	<video width="640" height="360" controls>
+  		<source src="your-video.mp4" type="video/mp4">
+   		Your browser does not support the video tag.
+	</video>
+
+	<script>
+		function validateForm() {
+			var answer = prompt("Хочешь видосик? (да/нет)");
+			if (answer && answer.toLowerCase() === "да") {
+				document.querySelector('.question-form').style.display = 'none';
+				return true;
+			} else {
+				alert("Листай вниз!");
+				return false;
+			}
+		}
+	</script>
+
+</body>
+</html>
